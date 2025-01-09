@@ -8,7 +8,7 @@ export default function Admin() {
   const { data: users, isLoading: usersLoading } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/auth/users');
+      const response = await fetch('https://wastefix.onrender.com/api/auth/users');
       if (!response.ok) throw new Error('Failed to fetch users');
       return response.json();
     }
@@ -17,7 +17,7 @@ export default function Admin() {
   const { data: bins, isLoading: binsLoading } = useQuery({
     queryKey: ["bins"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/bins/');
+      const response = await fetch('https://wastefix.onrender.com/api/bins/');
       if (!response.ok) throw new Error('Failed to fetch bins');
       return response.json();
     }
@@ -26,7 +26,7 @@ export default function Admin() {
   const { data: collections, isLoading: collectionsLoading } = useQuery({
     queryKey: ["collections"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/collections/');
+      const response = await fetch('https://wastefix.onrender.com/api/collections/');
       if (!response.ok) throw new Error('Failed to fetch collections');
       return response.json();
     }

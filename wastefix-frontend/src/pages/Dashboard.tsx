@@ -10,7 +10,7 @@ export default function Dashboard() {
   const { data: bins, isLoading: binsLoading } = useQuery({
     queryKey: ["bins"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/bins/');
+      const response = await fetch('https://wastefix.onrender.com/api/bins/');
       if (!response.ok) throw new Error('Failed to fetch bins');
       return response.json();
     },
@@ -22,7 +22,7 @@ export default function Dashboard() {
   const { data: reports, isLoading: reportsLoading } = useQuery({
     queryKey: ["reports"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/reports/');
+      const response = await fetch('https://wastefix.onrender.com/api/reports/');
       if (!response.ok) throw new Error('Failed to fetch reports');
       return response.json();
     },
