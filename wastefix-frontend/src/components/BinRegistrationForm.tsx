@@ -20,7 +20,7 @@ export default function BinRegistrationForm() {
     }
 
     try {
-      const response = await fetch('https://wastefix.onrender.com/api/collections/', {
+      const response = await fetch('http://localhost:5000/api/collections/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

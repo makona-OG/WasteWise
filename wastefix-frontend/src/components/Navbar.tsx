@@ -43,6 +43,7 @@ const Navbar = () => {
     { name: "Dashboard", path: "/dashboard" },
     { name: "Report Issue", path: "/report", requireAuth: true },
     { name: "Collections", path: "/collections" },
+    { name: "Contact", path: "/contact" },
     { name: "Admin", path: "/admin", requireAdmin: true },
     { name: "Users", path: "/users", requireAdmin: true },
   ];

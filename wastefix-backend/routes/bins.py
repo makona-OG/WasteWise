@@ -28,3 +28,10 @@ def update_bin_status(bin_id):
         'status': bin.status,
         'last_updated': bin.last_updated.isoformat()
     })
+
+@bins_bp.route('/<int:bin_id>', methods=['DELETE'])
+def delete_bin(bin_id):
+    bin = Bin.query.get_or_404(bin_id)
+    db.session.delete(bin)
+    db.session.commit()
+    return jsonify({'message': 'Bin deleted successfully'}), 200
