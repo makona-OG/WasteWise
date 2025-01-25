@@ -60,7 +60,7 @@ const App = () => (
                   path="/report"
                   element={
                     <ProtectedRoute>
-                      <Report />
+https://wastefix.onrender.com                      <Report />
                     </ProtectedRoute>
                   }
                 />

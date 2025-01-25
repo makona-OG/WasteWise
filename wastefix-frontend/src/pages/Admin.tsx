@@ -12,7 +12,7 @@ export default function Admin() {
   const { data: users, isLoading: usersLoading } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/auth/users');
+      const response = await fetch('https://wastefix.onrender.com/api/auth/users');
       if (!response.ok) throw new Error('Failed to fetch users');
       return response.json();
     }
@@ -21,7 +21,7 @@ export default function Admin() {
   const { data: bins, isLoading: binsLoading } = useQuery({
     queryKey: ["bins"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/bins/');
+      const response = await fetch('https://wastefix.onrender.com/api/bins/');
       if (!response.ok) throw new Error('Failed to fetch bins');
       return response.json();
     }
@@ -30,7 +30,7 @@ export default function Admin() {
   const { data: reports, isLoading: reportsLoading } = useQuery({
     queryKey: ["reports"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/reports/');
+      const response = await fetch('https://wastefix.onrender.com/api/reports/');
       if (!response.ok) throw new Error('Failed to fetch reports');
       return response.json();
     }
@@ -38,7 +38,7 @@ export default function Admin() {
 
   const deleteBinMutation = useMutation({
     mutationFn: async (binId: number) => {
-      const response = await fetch(`http://localhost:5000/api/bins/${binId}`, {
+      const response = await fetch(`https://wastefix.onrender.com/api/bins/${binId}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error('Failed to delete bin');

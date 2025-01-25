@@ -16,7 +16,7 @@ export default function Collections() {
   const { data: bins, isLoading } = useQuery({
     queryKey: ["bins"],
     queryFn: async () => {
-      const response = await fetch('http://localhost:5000/api/bins/');
+      const response = await fetch('https://wastefix.onrender.com/api/bins/');
       if (!response.ok) throw new Error('Failed to fetch bins data');
       return response.json();
     },

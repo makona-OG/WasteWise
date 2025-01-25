@@ -16,7 +16,7 @@ export default function Report() {
     queryKey: ["bins"],
     queryFn: async () => {
       console.log("Fetching bins...");
-      const response = await fetch('http://localhost:5000/api/bins/');
+      const response = await fetch('https://wastefix.onrender.com/api/bins/');
       if (!response.ok) {
         console.error("Failed to fetch bins:", response.statusText);
         throw new Error('Failed to fetch bins');
@@ -30,7 +30,7 @@ export default function Report() {
   const mutation = useMutation({
     mutationFn: async (newReport: { bin_id: number; issue: string }) => {
       console.log("Submitting report:", newReport);
-      const response = await fetch('http://localhost:5000/api/reports/', {
+      const response = await fetch('https://wastefix.onrender.com/api/reports/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
